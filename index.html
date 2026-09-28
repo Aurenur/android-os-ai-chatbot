@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI OS Lite</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">AI</div>
+          <div>
+            <strong>AI OS</strong>
+            <small>Lite</small>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-item active">Dashboard</button>
+          <button class="nav-item">AI Chat</button>
+          <button class="nav-item">Library</button>
+          <button class="nav-item">Storage</button>
+          <button class="nav-item">Settings</button>
+        </nav>
+
+        <div class="sidebar-card">
+          <span>System status</span>
+          <strong>Online</strong>
+          <div class="status-dot"></div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Operating System</p>
+            <h1>Overview</h1>
+          </div>
+          <button class="primary-btn">New Session</button>
+        </header>
+
+        <section class="stats-grid">
+          <div class="stat-card">
+            <span>AI Memory</span>
+            <strong>12.4 GB</strong>
+            <small>+1.2% this week</small>
+          </div>
+          <div class="stat-card">
+            <span>Library Items</span>
+            <strong>184</strong>
+            <small>26 new</small>
+          </div>
+          <div class="stat-card">
+            <span>Tasks</span>
+            <strong>7</strong>
+            <small>2 urgent</small>
+          </div>
+          <div class="stat-card">
+            <span>Uptime</span>
+            <strong>14d</strong>
+            <small>Stable</small>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel chat-panel">
+            <div class="panel-header">
+              <h2>AI Chat</h2>
+              <span class="chip">Active</span>
+            </div>
+
+            <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+
+            <form id="chatForm" class="chat-form">
+              <input
+                id="chatInput"
+                type="text"
+                placeholder="Ask the assistant..."
+                maxlength="200"
+                autocomplete="off"
+              />
+              <button type="submit" class="primary-btn">Send</button>
+            </form>
+          </div>
+
+          <div class="panel library-panel">
+            <div class="panel-header">
+              <h2>Library</h2>
+              <button id="addNoteBtn" class="ghost-btn">+ Add</button>
+            </div>
+
+            <div id="libraryList" class="library-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="libraryItemTemplate">
+      <div class="library-item">
+        <div class="library-icon">✦</div>
+        <div class="library-meta">
+          <strong class="library-title"></strong>
+          <small class="library-date"></small>
+        </div>
+      </div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
